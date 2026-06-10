@@ -1,0 +1,234 @@
+/* App.css - Осінні відтінки */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', 'Roboto', 'Georgia', serif;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  min-height: 100vh;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Осінній Header */
+.autumn-header {
+  background: linear-gradient(135deg, #d2691e 0%, #b53b1a 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  animation: slideDown 0.5s ease;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo h1 {
+  color: #fff4e6;
+  font-size: 1.8rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.logo h1:hover {
+  transform: scale(1.05);
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link, .cart-link {
+  color: #fff4e6;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-link:hover, .cart-link:hover {
+  background: rgba(255, 244, 230, 0.2);
+  transform: translateY(-2px);
+}
+
+.cart-link {
+  background: rgba(255, 244, 230, 0.1);
+  border: 1px solid rgba(255, 244, 230, 0.3);
+  position: relative;
+}
+
+.cart-icon {
+  font-size: 1.2rem;
+}
+
+.cart-count {
+  font-weight: bold;
+  background: #ff6b35;
+  padding: 0.2rem 0.5rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Основний контент */
+.main-content {
+  flex: 1;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  width: 100%;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Осінній Footer */
+.autumn-footer {
+  background: linear-gradient(135deg, #2c1810 0%, #4a2518 100%);
+  color: #ffd89a;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+  border-top: 2px solid #ffa559;
+}
+
+.autumn-footer p {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+/* Стилі для карток товарів (додаткові) */
+.product-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 3px solid #ffa559;
+}
+
+.product-info {
+  padding: 1rem;
+}
+
+.product-title {
+  color: #5e2e1c;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-price {
+  color: #d2691e;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/* Кнопки */
+.add-to-cart-btn {
+  background: linear-gradient(135deg, #ffa559 0%, #ff6b35 100%);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.add-to-cart-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 3px 10px rgba(255, 107, 53, 0.4);
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .logo h1 {
+    font-size: 1.4rem;
+  }
+  
+  .main-content {
+    padding: 0 1rem;
+  }
+  
+  .autumn-footer p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Стилі для скролбару */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffecd2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #d2691e, #b53b1a);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b53b1a;
+}

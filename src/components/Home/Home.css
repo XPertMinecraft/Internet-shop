@@ -1,0 +1,77 @@
+/* Home.css */
+
+/* Основной контейнер страницы */
+.home-container {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #fdf8f2 0%, #f8efe6 100%);
+  font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+}
+
+/* Заголовок страницы */
+.home-container h2 {
+  margin: 0 0 40px 0;
+  font-size: 2.8rem;
+  font-weight: 400;
+  text-align: center;
+  color: #8b5a2b; /* Терракотово-коричневый */
+  letter-spacing: -0.5px;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+/* Декоративное подчеркивание для заголовка */
+.home-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #d9b382, #b48c5c);
+  border-radius: 4px;
+}
+
+/* Сетка для карточек товаров */
+.products-grid {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Эмодзи в заголовке делаем чуть больше и теплее */
+.home-container h2 span {
+  font-size: 3.2rem;
+  filter: drop-shadow(2px 4px 4px rgba(160, 100, 40, 0.15));
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 30px 15px;
+  }
+
+  .home-container h2 {
+    font-size: 2rem;
+    white-space: normal;
+    width: 100%;
+    text-align: center;
+  }
+
+  .home-container h2::after {
+    width: 60px;
+    height: 2px;
+    bottom: -8px;
+  }
+
+  .products-grid {
+    gap: 20px;
+  }
+}
