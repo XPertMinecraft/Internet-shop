@@ -35,8 +35,7 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
-    <Navigate to="/home" replace={true} />
+    <BrowserRouter basename="/Internet-shop">
       <div className="app-container">
         <header className="autumn-header">
           <div className="header-content">
@@ -55,6 +54,7 @@ function App() {
 
         <main className="main-content">
           <Routes>
+            <Route path='/' element={<Navigate to="/home" replace={true} />}/>
             <Route path="/home" element={<Home addToCart={addToCart} />} />
             <Route path="/product/:id" element={<Product addToCart={addToCart} />} />
             <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} />} />
