@@ -43,7 +43,7 @@ function App() {
               <h1>🍂 Осінній Магазин 🍁</h1>
             </div>
             <nav>
-              <Link to="/" className="nav-link">Головна</Link>
+              <Link to="/home" className="nav-link">Головна</Link>
               <Link to="/cart" className="cart-link">
                 <span className="cart-icon">🛒</span>
                 <span className="cart-count">({cart.length})</span>
@@ -54,7 +54,7 @@ function App() {
 
         <main className="main-content">
           <Routes>
-            <Route path="/" element={<Home addToCart={addToCart} />} />
+            <Route path="/home" element={<Home addToCart={addToCart} />} />
             <Route path="/product/:id" element={<Product addToCart={addToCart} />} />
             <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} />} />
           </Routes>
