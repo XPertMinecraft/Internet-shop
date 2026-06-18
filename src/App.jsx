@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, Navigate } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Product from "./components/Product/Product";
 import { useState } from 'react';
@@ -36,6 +36,7 @@ function App() {
 
   return (
     <BrowserRouter>
+    <Navigate to="/home" replace={true} />
       <div className="app-container">
         <header className="autumn-header">
           <div className="header-content">
